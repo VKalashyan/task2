@@ -1,15 +1,14 @@
-package ru.vsu.cs.kalashyan;
+package ru.vsu.cs.kalashyan; 
 
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner task = new Scanner(System.in);
 
-        double a = scanDouble("a", task);
-        double b = scanDouble("b", task);
-        double c = scanDouble("c", task);
+        double a = scanDouble("a");
+        double b = scanDouble("b");
+        double c = scanDouble("c");
 
         try {
             EquationRoot result = findRootsQuadraticEquation(a, b, c);
@@ -21,7 +20,8 @@ public class Main {
         }
     }
 
-    public static double scanDouble(String name, Scanner scn) {
+    public static double scanDouble(String name) {
+        Scanner scn = new Scanner(System.in);
         System.out.print(" Entered value " + name + ": ");
         return scn.nextDouble();
     }
